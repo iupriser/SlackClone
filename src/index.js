@@ -20,6 +20,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
+// global state
 const store = createStore(() => {}, composeWithDevTools());
 
 class Root extends React.Component {
@@ -45,6 +46,7 @@ class Root extends React.Component {
 const RootWithAuth = withRouter(Root);
 
 ReactDOM.render(
+  // Provider component === to provide gobal state to all of component
   <Provider store={store}>
     <Router>
       <RootWithAuth />
